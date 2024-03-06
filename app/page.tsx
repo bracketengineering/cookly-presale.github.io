@@ -44,7 +44,7 @@ export default function Home() {
       <div className="flex flex-row justify-center items-center sticky top-0 w-full px-[2%] min-h-[85px]">
         <div className=" max-w-[1200px] flex flex-row justify-between w-full">
           <Link href={`/${referral ? `?referral=${referral}` : ``}`} className='flex flex-row space-x-2'>
-            <Image src={`${prefix}/logo.png`} alt="f" width={32} height={32} className='rounded-3xl'></Image>
+            <img src={`${prefix}/logo.png`} alt="f" width={32} height={32} className='rounded-3xl'></img>
             <text className="text-black font-bold text-2xl">Cookly</text>
           </Link>
           <Link href={`/lifetime${referral ? `?referral=${referral}` : ``}`}>
