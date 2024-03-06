@@ -43,13 +43,13 @@ export default function Lifetime() {
   const handleSubmit = async (e: any) => {
     e.preventDefault(); // Prevents the default form submission behavior
 
-    const response = await createCheckoutSession({
+    const response = JSON.parse(await createCheckoutSession({
       priceId: "price_1OqxZNKvfn71PZ6opdwM2MYX",
       url: `https://buy.stripe.com/test_28o01o2HscA427C144`,
       domain: "https://cookly.co.uk",
       promo_code: referral,
-    }) as any;
-
+    }));
+    
     console.log(response.body, response.body.url);
     if (response.body && response.body.url) {
       window.location.href = response.body.url; // Redirects the browser to the URL
