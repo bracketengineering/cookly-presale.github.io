@@ -51,19 +51,16 @@ export default function Home() {
       </div>
       <div className="min-h-[91vh] flex flex-col z-10 w-full items-center space-y-8 justify-around font-mono lg:flex px-8 pt-16 pb-[137px] shadow-lime-500/50">
         <p className="uppercase text-center font-black text-6xl ">
-          Welcome, <span className="text-transparent outline-text">George</span>
+          Thank <span className="text-transparent outline-text">you</span>
         </p>
         <div>
           <p className="max-w-[800px] text-center mb-4">Your referral code:</p>
           <p className="uppercase text-center font-black text-7xl ">
-            EON34S
+            <span className="text-transparent outline-text">Earn</span> £5
           </p>
-          <div className="flex mt-16 items-center justify-center space-y-4 flex justify-center lg:space-x-4 lg:flex-row flex-col">
-            <span className="text-center ">Your referral link: </span>
-            <button onClick={() => copyClip()} className="justify-center items-center font-black bg-white pt-3 hover:bg-black hover:text-white border-[1px] rounded-xl py-2 px-4 shadow-[0_0px_30px_5px_rgba(0,0,0,0.5)] shadow-[#1edf2b]/25">{link}<ContentCopy className='ml-2 mb-1' /></button>
-          </div>
+
         </div>
-        <p className="max-w-[800px] text-center">We're thrilled to have embark on this journey together. As a thank you here is your unique referral link and promo code. For every person you refer they get £5 off their purchase and <span className="font-black ">we pay you £5</span> back! This is an unlimited scheme so if you get 6 referrals you would have Premium completely free!</p>
+        <p className="max-w-[800px] text-center">We're thrilled to have embark on this journey together. As a thank you we're sending your email a unique referral link and promo code. For every person you refer they get £5 off their purchase and <span className="font-black ">we pay you £5! </span>This is not capped, so you get <span className="font-black ">£5</span> for every referral!</p>
 
       </div>
 
