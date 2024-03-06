@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { createCheckoutSession } from "../APIs/api";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Footer from "../components/Footer";
 const prefix = "https://cookly.co.uk";
 
 const CountdownTimer = dynamic(() => import("../components/countdown"), {
@@ -73,7 +74,7 @@ export default function Lifetime() {
           </Link>
         </div>
       </div>
-      <section className="font-mono py-16 min-h-screen w-full flex flex-col items-center justify-center">
+      <section className=" py-16 min-h-screen w-full flex flex-col items-center justify-center">
         <div className="max-w-[1200px] flex lg:flex-row flex-col mx-8 lg:space-x-16 mb-auto ">
           <img
             src={`${prefix}/phone.png`}
@@ -81,17 +82,17 @@ export default function Lifetime() {
             className="max-h-[500px] object-contain mb-16 lg:mb-auto flex-shrink-1 "
           ></img>
           <div className="space-y-8">
-            <span className="block text-5xl font-black ">Lifetime Premium</span>
+            <span className="block text-4xl font-black ">Lifetime Premium</span>
             <div className="flex flex-row">
               <span className="block text-2xl font-bold line-through mr-4 text-neutral-300">
-                £200.00
+                £250.00
               </span>
               <span className="block text-2xl font-black flex flex-row ">
                 £33.00
               </span>
             </div>
             <div>
-              <Link href={`https://buy.stripe.com/test_28o01o2HscA427C144${referral ? `?prefilled_promo_code=${referral}` : ``}`}>
+              <Link href={`https://buy.stripe.com/9AQaH4gKs04c5Fe144${referral ? `?prefilled_promo_code=${referral}` : ``}`}>
                 <button
                   className="transition ease-in-out hover:-translate-y-1 hover:scale-110 delay-150 border-[#1edf2b] border-2 hover:bg-[#1edf2b] text-black hover:text-white font-bold px-16 py-4 rounded-full w-full lg:w-auto md:w-auto"
                 >
@@ -108,27 +109,29 @@ export default function Lifetime() {
             <span className="block text-red-500 font-bold">
               There will only ever be 1000 of these! So get yours now!
             </span>
-            <div className="bg-white border-[1px] rounded-3xl py-4 px-6">
+            <div className="bg-white border-[1px] rounded-3xl py-4 px-6 relative">
+
+              <div className='z-[-100] bg-gradient-conic blur-3xl opacity-10 from-green-600 via-[#1edf2b] absolute lg:bottom-0 bottom-[-50px] lg:top-[-20px] right-[-150px] w-[700px] h-[300px]'></div>
               <span className="block">
                 Cookly is an app in development that will have premium features
-                availible at prices starting from{" "}
-                <span className="font-black">£70</span> per year. By becoming a
-                lifetime member now before our inception, you will gain access
-                to any and all premium features for a fraction of the price.
+                available at prices starting from{" "}
+                <span className="font-bold">£80+</span> per year. By becoming a
+                lifetime member now, before our inception, you will gain access
+                to any and all premium features for a fraction of the price... <span className="font-bold">forever.</span>
               </span>
               <span className="block mt-4">
-                Upon the app's release, if you're not happy with Cookly, or you
-                would just like your money back, you will have{" "}
-                <span className="font-black">60-days</span> to apply for a{" "}
+                Upon the app's release, if you're not happy with Cookly, you will have{" "}
+                <span className="font-bold">60-days</span> to apply for a{" "}
                 <span className="font-bold">hassle-free refund.</span>
               </span>
               <span className="block mt-4 font-bold">
-                We plan to realease the app on IOS in April 2024.
+                We plan to release the app on IOS in April 2024.
               </span>
             </div>
           </div>
         </div>
-        <div className="flex flex-col z-10 w-full items-center  justify-around font-mono lg:flex px-8 py-32">
+        <div className="flex flex-col z-10 w-full items-center relative justify-around  lg:flex px-8 py-32">
+          <div className='z-[-100] bg-gradient-conic blur-2xl opacity-20 from-green-600 via-[#1edf2b] absolute bottom-[100px]  left-[100px] w-[700px] h-[300px]'></div>
           <div className="max-w-[800px] space-y-6">
             <span
               className="block text-3xl font-black"
@@ -143,7 +146,7 @@ export default function Lifetime() {
               data-aos="fade-right"
               data-aos-delay="400"
             >
-              <span className="block text-xl font-black ">
+              <span className="block text-xl font-bold ">
                 What extra features do I get as a Premium Member?
               </span>
               <span className="block ml-2">
@@ -152,9 +155,11 @@ export default function Lifetime() {
                 possible are:
               </span>
               <ul className="ml-4 space-y-2 pb-2">
-                <li>Dynamic Macro Goals</li>
-                <li>Higher quality recommendations</li>
-                <li>Meal Plans based on your preferences and goals</li>
+                <li>Dynamic Macro Tracker</li>
+                <li>Higher quality meal recommendations</li>
+                <li>Generated Meal Plans based on your personal preferences and goals</li>
+                <li>Price tracking for your shoping list, based on where you shop</li>
+                <li>Personalised health insights</li>
                 <li>Waste reduction algorithm</li>
               </ul>
             </div>
@@ -164,24 +169,21 @@ export default function Lifetime() {
               data-aos="fade-left"
               data-aos-delay="400"
             >
-              <span className="block text-xl font-black">
+              <span className="block text-xl font-bold">
                 What features do I get as a Non-Premium Member?
               </span>
               <span className="block ml-2">
-                Again, we plan to add many new features. Things we are working
+                Again, we plan to add many new features. Some of the things we are working
                 on now are:
               </span>
               <ul className="ml-4 space-y-2 pb-2">
-                <li>Normal calorie counter</li>
-                <li>Meal Preferences</li>
-                <li>
-                  Shopping List that integrates with your meal recommendations
-                </li>
+                <li>Macro Tracker</li>
+                <li>Meal recommendations based on preferences</li>
                 <li>
                   Recipe sharing - share your healthy (or not) recipes with your
                   friends
                 </li>
-                <li>Search-by-Ingredient</li>
+                <li>Search-by-Ingredient for meals</li>
               </ul>
             </div>
 
@@ -190,8 +192,8 @@ export default function Lifetime() {
               data-aos="fade-right"
               data-aos-delay="400"
             >
-              <span className="block text-xl font-black">
-                Will Cookly be availible on Android?
+              <span className="block text-xl font-bold">
+                Will Cookly be available on Android?
               </span>
               <span className="block ml-2 pb-2">
                 Although we plan to release on Android as soon as possible, we
@@ -204,53 +206,18 @@ export default function Lifetime() {
               data-aos="fade-left"
               data-aos-delay="400"
             >
-              <span className="block text-xl font-black">
-                When and where will Cookly be availble?
+              <span className="block text-xl font-bold">
+                When and where will Cookly be available?
               </span>
               <span className="block ml-2 pb-2">
-                We plan to release on IOS in the UK in April 2024. We plan to
-                expand internationally over time but have no explicit deadline.
+                We plan to release on IOS in the UK in April 2024. Then,
+                expand internationally by the end of 2024.
               </span>
             </div>
           </div>
         </div>
       </section>
-      <footer className="bg-neutral-900 min-h-[20vh] text-white items-center  flex w-full p-4">
-        <div className="max-w-screen-xl mx-auto py-8 flex flex-col md:flex-row w-full justify-between  items-center">
-          <div className="flex space-y-4 flex-col">
-            <p>Bristol, UK</p>
-            <p>contact@bracket.software</p>
-            <p>© 2024 Cookly. All rights reserved.</p>
-          </div>
-          <div className="flex space-y-4 flex-col">
-            <a href="#" className="text-white hover:text-gray-400">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-white hover:text-gray-400">
-              Terms of Use
-            </a>
-            <a href="#" className="text-white hover:text-gray-400">
-              Contact Us
-            </a>
-          </div>
-          <div className="flex mt-2 space-y-4 md:mt-0 flex-col">
-            <a href="#" className="text-white hover:text-gray-400 mr-2">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            {/* <a href="#" className="text-white  text-xs justify-center items-center hover:text-gray-400">
-              <Reddit className="mr-2" />
-              r/Cookly
-            </a> */}
-            <a
-              href="#"
-              className="text-white  text-xs justify-center items-center hover:text-gray-400"
-            >
-              <InstagramIcon className="mr-2" />
-              @CooklyApp
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
