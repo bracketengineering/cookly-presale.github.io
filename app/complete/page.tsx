@@ -10,9 +10,6 @@ import { useEffect, useState } from 'react';
 import { ContentCopy, CopyAll, CopyAllOutlined } from '@mui/icons-material';
 const prefix = "https://cookly.co.uk"
 export default function Home() {
-
-
-
   return (
     <main className="flex flex-col items-center">
       <div className="flex flex-row justify-center items-center sticky top-0 w-full px-[2%] min-h-[85px]">
@@ -31,7 +28,6 @@ export default function Home() {
           Thank <span className="text-transparent outline-text">you</span>
         </p>
         <div>
-          <p className="max-w-[800px] text-center mb-4">Your referral code:</p>
           <p className="uppercase text-center font-black text-7xl ">
             <span className="text-transparent outline-text">Earn</span> £5
           </p>
