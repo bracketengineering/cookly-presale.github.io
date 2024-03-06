@@ -25,15 +25,15 @@ export default function Home() {
       </div>
       <div className="min-h-[91vh] flex flex-col z-10 w-full items-center space-y-8 justify-around font-mono lg:flex px-8 pt-16 pb-[137px] shadow-lime-500/50">
         <p className="uppercase text-center font-black text-6xl ">
-          Thank <span className="text-transparent outline-text">you</span>
+          <span className="text-transparent outline-text">Thank you</span>
         </p>
         <div>
           <p className="uppercase text-center font-black text-7xl font-mono">
-            <span className="text-transparent outline-text">Earn</span> £5
+            Wanna Earn £5?
           </p>
 
         </div>
-        <p className="max-w-[800px] text-center">We're thrilled to have embark on this journey together. As a thank you we're sending your email a unique referral link and promo code. For every person you refer they get £5 off their purchase and <span className="font-black ">we pay you £5! </span>This is not capped, so you get <span className="font-black ">£5</span> for every referral!</p>
+        <p className="max-w-[800px] text-center">We're thrilled to embark on this journey with you. As a thank you we're sending you a unique referral link and promo code via email. For every person you refer they get £5 off their purchase and <span className="font-black ">we pay you £5! </span>This is not capped, so you get <span className="font-black ">£5</span> for every referral!</p>
 
       </div>
 
