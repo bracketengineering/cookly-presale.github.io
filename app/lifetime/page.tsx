@@ -60,17 +60,8 @@ export default function Lifetime() {
     <main className="">
       <div className="flex flex-row justify-center items-center sticky top-0 w-full px-[2%] min-h-[85px]">
         <div className=" max-w-[1200px] flex flex-row justify-between w-full">
-          <Link
-            href={`/${referral ? `?referral=${referral}` : ``}`}
-            className="flex flex-row space-x-2 items-center"
-          >
-            <img
-              src={`${prefix}/logo.png`}
-              alt="f"
-              width={32}
-              height={32}
-              className="object-contain"
-            ></img>
+          <Link href={`/${referral ? `?referral=${referral}` : ``}`} className='flex flex-row space-x-2'>
+            <img src={`${prefix}/logo.png`} alt="f" width={32} height={32} className='rounded-3xl'></img>
             <text className="text-black font-bold text-2xl">Cookly</text>
           </Link>
 
@@ -85,7 +76,7 @@ export default function Lifetime() {
       <section className="font-mono py-16 min-h-screen w-full flex flex-col items-center justify-center">
         <div className="max-w-[1200px] flex lg:flex-row flex-col mx-8 lg:space-x-16 mb-auto ">
           <img
-            src={"${prefix}/phone.png"}
+            src={`${prefix}/phone.png`}
             alt="f"
             className="max-h-[500px] object-contain mb-16 lg:mb-auto flex-shrink-1 "
           ></img>
