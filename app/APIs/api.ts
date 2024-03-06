@@ -25,7 +25,7 @@ export const createCheckoutSession = async (formData: CheckoutSessionInput) => {
       formData
     );
     console.log(JSON.stringify(response));
-    return response.data;
+    return response;
   } catch (error) {
     console.error("Error creating checkout session:", error);
     return error;

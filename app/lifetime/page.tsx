@@ -40,27 +40,20 @@ export default function Lifetime() {
     // You can store the metadata in state, context, or any other desired location
   }, []);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault(); // Prevents the default form submission behavior
 
-    createCheckoutSession({
+    const response = await createCheckoutSession({
       priceId: "price_1OqxZNKvfn71PZ6opdwM2MYX",
       url: `https://buy.stripe.com/test_28o01o2HscA427C144`,
       domain: "https://cookly.co.uk",
       promo_code: referral,
-    })
-      .then((response: any) => {
-        alert(JSON.stringify(response));
-        console.log(JSON.stringify(response));
-        // Assuming the response body has a property 'url' that contains the URL to redirect to
-        if (response && response.url) {
-          window.location.href = response.url; // Redirects the browser to the URL
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        // Handle any errors here, such as showing an error message to the user
-      });
+    }) as any;
+    alert(JSON.stringify(response));
+    console.log(JSON.stringify(response));
+    if (response.data && response.data.url) {
+      window.location.href = response.data.url; // Redirects the browser to the URL
+    }
   };
 
   return (
@@ -107,7 +100,7 @@ export default function Lifetime() {
               </span>
             </div>
             <div>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={async (e) => await handleSubmit(e)}>
                 <button
                   type="submit"
                   className="transition ease-in-out hover:-translate-y-1 hover:scale-110 delay-150 border-[#1edf2b] border-2 hover:bg-[#1edf2b] text-black hover:text-white font-bold px-16 py-4 rounded-full w-full lg:w-auto md:w-auto"
