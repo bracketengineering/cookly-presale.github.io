@@ -48,8 +48,8 @@ export default function Lifetime() {
       url: `https://buy.stripe.com/test_28o01o2HscA427C144`,
       domain: "https://cookly.co.uk",
       promo_code: referral,
-    })).body) ;
-    
+    })).body);
+
     console.log(response, response.url);
     if (response && response.url) {
       window.location.href = response.url; // Redirects the browser to the URL
@@ -64,13 +64,13 @@ export default function Lifetime() {
             href={`/${referral ? `?referral=${referral}` : ``}`}
             className="flex flex-row space-x-2 items-center"
           >
-            <Image
+            <img
               src={`${prefix}/logo.png`}
               alt="f"
               width={32}
               height={32}
               className="object-contain"
-            ></Image>
+            ></img>
             <text className="text-black font-bold text-2xl">Cookly</text>
           </Link>
 
@@ -84,11 +84,11 @@ export default function Lifetime() {
       </div>
       <section className="font-mono py-16 min-h-screen w-full flex flex-col items-center justify-center">
         <div className="max-w-[1200px] flex lg:flex-row flex-col mx-8 lg:space-x-16 mb-auto ">
-          <Image
+          <img
             src={"${prefix}/phone.png"}
             alt="f"
             className="max-h-[500px] object-contain mb-16 lg:mb-auto flex-shrink-1 "
-          ></Image>
+          ></img>
           <div className="space-y-8">
             <span className="block text-5xl font-black ">Lifetime Premium</span>
             <div className="flex flex-row">
