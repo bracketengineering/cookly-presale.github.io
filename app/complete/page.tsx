@@ -8,7 +8,7 @@ import Image from 'next/image';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { useEffect, useState } from 'react';
 import { ContentCopy, CopyAll, CopyAllOutlined } from '@mui/icons-material';
-const prefix = "https://bracketengineering.github.io/cookly-presale.github.io";
+const prefix = "https://cookly.co.uk"
 export default function Home() {
   const [referral, setReferral] = useState<string | null>(null);
   const [link, setLink] = useState("https://cookly.co.uk/?referral=EON34S");

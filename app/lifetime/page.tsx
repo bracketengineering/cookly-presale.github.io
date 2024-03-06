@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
 import { createCheckoutSession } from '../APIs/api';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-const prefix = "https://bracketengineering.github.io/cookly-presale.github.io";
+const prefix = "https://cookly.co.uk"
 
 const CountdownTimer = dynamic(() => import('../components/countdown'), {
   ssr: false
