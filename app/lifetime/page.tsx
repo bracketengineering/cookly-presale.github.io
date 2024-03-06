@@ -1,3 +1,4 @@
+"use client"
 import dynamic from 'next/dynamic';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { IconButton } from "@mui/material";
@@ -8,51 +9,104 @@ import plac from "../assets/phone.png"
 import Image from 'next/image'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { Reddit } from '@mui/icons-material';
+import { useEffect, useState } from 'react';
+import { createCheckoutSession } from '../APIs/api';
 
 const CountdownTimer = dynamic(() => import('../components/countdown'), {
   ssr: false
 });
 
 export default function Lifetime() {
+  const [referral, setReferral] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Get the URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const temp = urlParams.get('referral');
+    setReferral(temp);
+
+    // Do something with the metadata value
+    console.log(referral);
+
+    // You can store the metadata in state, context, or any other desired location
+  }, []);
+
+
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault(); // Prevents the default form submission behavior
+
+    createCheckoutSession({
+      priceId: "price_1OqxZNKvfn71PZ6opdwM2MYX",
+      url: `https://buy.stripe.com/test_28o01o2HscA427C144`,
+      domain: "https://localhost:3000",
+      promo_code: referral
+    })
+      .then((response) => {
+
+        // Assuming the response body has a property 'url' that contains the URL to redirect to
+        if (response && response.body.url) {
+          window.location.href = response.body.url; // Redirects the browser to the URL
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        // Handle any errors here, such as showing an error message to the user
+      });
+  };
+
+
   return (
     <main className="">
       <div className="flex flex-row justify-center items-center sticky top-0 w-full px-[2%] min-h-[85px]">
         <div className=" max-w-[1200px] flex flex-row justify-between w-full">
 
-          <Link href="/" className='flex flex-row space-x-2 items-center'  >
+          <Link href={`/${referral ? `?referral=${referral}` : ``}`} className='flex flex-row space-x-2 items-center'  >
             <Image src={logo} alt="f" width={32} height={32} className='object-contain'></Image>
             <text className="text-black font-bold text-2xl">Cookly</text>
           </Link>
 
 
-          <Link href="/lifetime" className="">
+          <Link href={`/lifetime${referral ? `?referral=${referral}` : ``}`} className="">
             <ShoppingCartIcon className="ml-auto" />
           </Link>
 
         </div>
       </div>
       <section className="font-mono py-16 min-h-screen w-full flex flex-col items-center justify-center">
-        <div className="max-w-[1200px] flex lg:flex-row flex-col mx-16 lg:space-x-16 mb-auto ">
+        <div className="max-w-[1200px] flex lg:flex-row flex-col mx-8 lg:space-x-16 mb-auto ">
           <Image src={plac} alt="f" className='max-h-[500px] object-contain mb-16 lg:mb-auto flex-shrink-1 '></Image>
           <p className="space-y-8">
             <span className="block text-5xl font-black ">Lifetime Premium</span>
-            <span className="block text-2xl font-black ">£30.00</span>
-            <button className="transition ease-in-out hover:-translate-y-1 hover:scale-110 delay-150  border-[#1edf2b] border-2 hover:bg-[#1edf2b] text-black hover:text-white font-bold px-16 py-4 rounded-full w-full lg:w-auto md:w-auto" >Buy Now</button>
+            <div className="flex flex-row">
+              <span className="block text-2xl font-bold line-through mr-4 text-neutral-300">£200.00</span>
+              <span className="block text-2xl font-black flex flex-row ">
+                £33.00</span>
+            </div>
+            <div>
+              <form onSubmit={handleSubmit}>
+                <button type="submit" className="transition ease-in-out hover:-translate-y-1 hover:scale-110 delay-150 border-[#1edf2b] border-2 hover:bg-[#1edf2b] text-black hover:text-white font-bold px-16 py-4 rounded-full w-full lg:w-auto md:w-auto" >
+                  Buy Now
+                </button>
+              </form>
+            </div>
             <div className='flex flex-shrink-1 flex-col'>
               <p className="pb-2 font-bold text-red-500">Ends in:</p>
               <div className='flex flex-shrink-1'>
-                <CountdownTimer /></div>
+                <CountdownTimer />
+              </div>
             </div>
             <span className="block text-red-500 font-bold">There will only ever be 1000 of these! So get yours now!</span>
             <div className="bg-white border-[1px] rounded-3xl py-4 px-6">
 
-              <span className="block">Cookly is an app in development that will contain premium features which will be availible at prices starting from <span className="font-black">£60</span> per year. By becoming a lifetime member now, you will gain access to any and all premium features for a fraction of the price.</span>
+              <span className="block">Cookly is an app in development that will have premium features availible at prices starting from <span className="font-black">£70</span> per year. By becoming a lifetime member now before our inception, you will gain access to any and all premium features for a fraction of the price.</span>
+              <span className="block mt-4">Upon the app's release, if you're not happy with Cookly, or you would just like your money back, you will have <span className="font-black">60-days</span> to apply for a <span className="font-bold">hassle-free refund.</span></span>
               <span className="block mt-4 font-bold">We plan to realease the app on IOS in April 2024.</span>
             </div>
 
           </p>
         </div>
-        <div className="flex flex-col z-10 w-full items-center  justify-around font-mono lg:flex px-16 py-32">
+        <div className="flex flex-col z-10 w-full items-center  justify-around font-mono lg:flex px-8 py-32">
           <div className="max-w-[800px] space-y-6">
             <span className="block text-3xl font-black">FAQ</span>
             <div className='bg-white px-8 py-4 rounded-3xl border-[1px] space-y-4'>

@@ -1,3 +1,4 @@
+"use client"
 import dynamic from 'next/dynamic';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { IconButton } from "@mui/material";
@@ -6,26 +7,42 @@ import Link from 'next/link';
 import logo from "./assets/logo.png";
 import Image from 'next/image';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import { useEffect, useState } from 'react';
 
 const CountdownTimer = dynamic(() => import('./components/countdown'), {
   ssr: false
 });
 
 export default function Home() {
+  const [referral, setReferral] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Get the URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const temp = urlParams.get('referral');
+    setReferral(temp);
+
+    // Do something with the metadata value
+    console.log(referral);
+
+    // You can store the metadata in state, context, or any other desired location
+  }, []);
+
+
   return (
     <main className="flex flex-col items-center">
       <div className="flex flex-row justify-center items-center sticky top-0 w-full px-[2%] min-h-[85px]">
         <div className=" max-w-[1200px] flex flex-row justify-between w-full">
-          <Link href="/" className='flex flex-row space-x-2'>
+          <Link href={`/${referral ? `?referral=${referral}` : ``}`} className='flex flex-row space-x-2'>
             <Image src={logo} alt="f" width={32} height={32} className='rounded-3xl'></Image>
             <text className="text-black font-bold text-2xl">Cookly</text>
           </Link>
-          <Link href="/lifetime">
+          <Link href={`/lifetime${referral ? `?referral=${referral}` : ``}`}>
             <ShoppingCartIcon />
           </Link>
         </div>
       </div>
-      <div className="min-h-[91vh] flex flex-col z-10 w-full items-center space-y-8 justify-around font-mono lg:flex px-16 pt-16 pb-[137px] shadow-lime-500/50">
+      <div className="min-h-[91vh] flex flex-col z-10 w-full items-center space-y-8 justify-around font-mono lg:flex px-8 pt-16 pb-[137px] shadow-lime-500/50">
         <p className="uppercase text-center font-black text-6xl ">
           Unlock <span className="text-transparent outline-text">your</span> potential
         </p>
@@ -36,13 +53,13 @@ export default function Home() {
 
             <p className="text-center text-red-500 font-bold mt-4 max-w-[400px]">LIMITED TIME OFFER!</p>
           </div>
-          <Link href="/lifetime">
+          <Link href={`/lifetime/${referral ? `?referral=${referral}` : ``}`}>
             <button className="transition ease-in-out hover:-translate-y-1 hover:scale-110 delay-150 bg-[#1edf2b] hover:bg-black text-black text-lg hover:text-white font-bold px-8 py-4 rounded-full" >Become A Founding Member</button>
           </Link>
         </div>
       </div>
 
-      <div className="min-h-[60vh] flex flex-col z-10 w-full items-center  justify-around font-mono lg:flex px-16 pb-16">
+      <div className="min-h-[60vh] flex flex-col z-10 w-full items-center  justify-around font-mono lg:flex px-8 pb-16">
         <p className="max-w-[800px] space-y-12">
           <span className="block">Currently the health and fitness space remains exclusive for the people who already understand it and know what to eat.‍</span>
           <span className="block">We're developing an app that aims to make gaining muscle, maintaining and losing weight accessible and simpler than ever.</span>
@@ -55,7 +72,7 @@ export default function Home() {
       <p className="uppercase text-center font-black font-mono text-6xl my-16">
         <span className="text-black">Features</span>
       </p>
-      <div className="min-h-[91vh] flex flex-col z-10 w-full items-center  justify-around font-mono lg:flex px-16 py-16">
+      <div className="min-h-[91vh] flex flex-col z-10 w-full items-center  justify-around font-mono lg:flex px-8 py-16">
         <p className="max-w-[800px] space-y-12">
           <span className="block text-3xl font-black ">Dynamic Macro Tracking</span>
           <span className="block">Unlike ordinary calorie trackers, which don't at all consider different metabolic rates, our <span className="font-black">Premium Subscription</span> boasts a dynamic macro goal setter. An advanced algorithm powered by AI that constantly redefines itself for your own metabolism, so that you can be confident you will meet your goals.</span>
