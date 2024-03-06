@@ -50,7 +50,7 @@ export default function Lifetime() {
       promo_code: referral,
     }) as any;
 
-    console.log(JSON.stringify(response));
+    console.log(JSON.stringify(response), response.body.url);
     if (response.body && response.body.url) {
       window.location.href = response.body.url; // Redirects the browser to the URL
     }
