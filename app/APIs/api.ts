@@ -24,7 +24,7 @@ export const createCheckoutSession = async (formData: CheckoutSessionInput) => {
       "https://mpddx5nqrl.execute-api.eu-west-2.amazonaws.com/v1/create-checkout-session",
       formData
     );
-    console.log(JSON.parse(response.data));
+    console.log(Object.keys(response.data));
     return response.data;
   } catch (error) {
     console.error("Error creating checkout session:", error);

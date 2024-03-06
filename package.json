@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && touch docs/.nojekyll",
+    "build": "next build && touch docs/.nojekyll && touch docs/CNAME && echo cookly.co.uk > docs/CNAME",
     "start": "next start -p 8080",
     "lint": "next lint"
   },
