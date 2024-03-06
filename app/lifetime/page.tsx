@@ -50,6 +50,7 @@ export default function Lifetime() {
       promo_code: referral,
     })
       .then((response: any) => {
+        alert(JSON.stringify(response));
         console.log(JSON.stringify(response));
         // Assuming the response body has a property 'url' that contains the URL to redirect to
         if (response && response.url) {
