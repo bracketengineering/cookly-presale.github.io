@@ -91,14 +91,13 @@ export default function Lifetime() {
               </span>
             </div>
             <div>
-              <form onSubmit={async (e) => await handleSubmit(e)}>
+              <Link href="https://buy.stripe.com/9AQaH4gKs04c5Fe144">
                 <button
-                  type="submit"
                   className="transition ease-in-out hover:-translate-y-1 hover:scale-110 delay-150 border-[#1edf2b] border-2 hover:bg-[#1edf2b] text-black hover:text-white font-bold px-16 py-4 rounded-full w-full lg:w-auto md:w-auto"
                 >
                   Buy Now
                 </button>
-              </form>
+              </Link>
             </div>
             <div className="flex flex-shrink-1 flex-col">
               <p className="pb-2 font-bold text-red-500">Ends in:</p>
