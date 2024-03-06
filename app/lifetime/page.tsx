@@ -11,6 +11,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { Reddit } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
 import { createCheckoutSession } from '../APIs/api';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const CountdownTimer = dynamic(() => import('../components/countdown'), {
   ssr: false
@@ -20,6 +22,12 @@ export default function Lifetime() {
   const [referral, setReferral] = useState<string | null>(null);
 
   useEffect(() => {
+    AOS.init({
+      once: true,
+      disable: 'phone',
+      duration: 600,
+      easing: 'ease-out-sine',
+    })
     // Get the URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const temp = urlParams.get('referral');
@@ -29,7 +37,7 @@ export default function Lifetime() {
     console.log(referral);
 
     // You can store the metadata in state, context, or any other desired location
-  }, [setReferral]);
+  }, []);
 
 
 
@@ -76,7 +84,7 @@ export default function Lifetime() {
       <section className="font-mono py-16 min-h-screen w-full flex flex-col items-center justify-center">
         <div className="max-w-[1200px] flex lg:flex-row flex-col mx-8 lg:space-x-16 mb-auto ">
           <Image src={plac} alt="f" className='max-h-[500px] object-contain mb-16 lg:mb-auto flex-shrink-1 '></Image>
-          <p className="space-y-8">
+          <div className="space-y-8">
             <span className="block text-5xl font-black ">Lifetime Premium</span>
             <div className="flex flex-row">
               <span className="block text-2xl font-bold line-through mr-4 text-neutral-300">£200.00</span>
@@ -104,12 +112,12 @@ export default function Lifetime() {
               <span className="block mt-4 font-bold">We plan to realease the app on IOS in April 2024.</span>
             </div>
 
-          </p>
+          </div>
         </div>
         <div className="flex flex-col z-10 w-full items-center  justify-around font-mono lg:flex px-8 py-32">
           <div className="max-w-[800px] space-y-6">
-            <span className="block text-3xl font-black">FAQ</span>
-            <div className='bg-white px-8 py-4 rounded-3xl border-[1px] space-y-4'>
+            <span className="block text-3xl font-black" data-aos="fade-in" data-aos-delay="400" data-aos-duration="1000">FAQ</span>
+            <div className='bg-white px-8 py-4 rounded-3xl border-[1px] space-y-4' data-aos="fade-right" data-aos-delay="400">
               <span className="block text-xl font-black ">What extra features do I get as a Premium Member?</span>
               <span className="block ml-2">We plan to evolve our app and hence our premium features over time, but some of the things we plan on implementing as soon as possible are:</span>
               <ul className="ml-4 space-y-2 pb-2">
@@ -120,7 +128,7 @@ export default function Lifetime() {
               </ul>
             </div>
 
-            <div className='bg-white px-8 py-4 rounded-3xl border-[1px] space-y-4'>
+            <div className='bg-white px-8 py-4 rounded-3xl border-[1px] space-y-4' data-aos="fade-left" data-aos-delay="400">
               <span className="block text-xl font-black">What features do I get as a Non-Premium Member?</span>
               <span className="block ml-2">Again, we plan to add many new features. Things we are working on now are:</span>
               <ul className="ml-4 space-y-2 pb-2">
@@ -132,12 +140,12 @@ export default function Lifetime() {
               </ul>
             </div>
 
-            <div className='bg-white px-8 py-4 rounded-3xl border-[1px] space-y-4'>
+            <div className='bg-white px-8 py-4 rounded-3xl border-[1px] space-y-4' data-aos="fade-right" data-aos-delay="400">
               <span className="block text-xl font-black">Will Cookly be availible on Android?</span>
               <span className="block ml-2 pb-2">Although we plan to release on Android as soon as possible, we currently have no set deadline.</span>
             </div>
 
-            <div className='bg-white px-8 py-4 rounded-3xl border-[1px] space-y-4'>
+            <div className='bg-white px-8 py-4 rounded-3xl border-[1px] space-y-4' data-aos="fade-left" data-aos-delay="400">
               <span className="block text-xl font-black">When and where will Cookly be availble?</span>
               <span className="block ml-2 pb-2">We plan to release on IOS in the UK in April 2024. We plan to expand internationally over time but have no explicit deadline.</span>
             </div>
