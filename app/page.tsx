@@ -10,6 +10,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+const prefix = "https://bracketengineering.github.io/cookly-presale.github.io";
 
 const CountdownTimer = dynamic(() => import('./components/countdown'), {
   ssr: false
@@ -43,7 +44,7 @@ export default function Home() {
       <div className="flex flex-row justify-center items-center sticky top-0 w-full px-[2%] min-h-[85px]">
         <div className=" max-w-[1200px] flex flex-row justify-between w-full">
           <Link href={`/${referral ? `?referral=${referral}` : ``}`} className='flex flex-row space-x-2'>
-            <Image src={logo} alt="f" width={32} height={32} className='rounded-3xl'></Image>
+            <Image src={`${prefix}/logo.png`} alt="f" width={32} height={32} className='rounded-3xl'></Image>
             <text className="text-black font-bold text-2xl">Cookly</text>
           </Link>
           <Link href={`/lifetime${referral ? `?referral=${referral}` : ``}`}>

@@ -8,7 +8,7 @@ import Image from 'next/image';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { useEffect, useState } from 'react';
 import { ContentCopy, CopyAll, CopyAllOutlined } from '@mui/icons-material';
-
+const prefix = "https://bracketengineering.github.io/cookly-presale.github.io";
 export default function Home() {
   const [referral, setReferral] = useState<string | null>(null);
   const [link, setLink] = useState("https://cookly.co.uk/?referral=EON34S");
@@ -41,7 +41,7 @@ export default function Home() {
       <div className="flex flex-row justify-center items-center sticky top-0 w-full px-[2%] min-h-[85px]">
         <div className=" max-w-[1200px] flex flex-row justify-between w-full">
           <Link href={`/${referral ? `?referral=${referral}` : ``}`} className='flex flex-row space-x-2'>
-            <Image src={logo} alt="f" width={32} height={32} className='rounded-3xl'></Image>
+            <Image src={`${prefix}/logo`} alt="f" width={32} height={32} className='rounded-3xl'></Image>
             <text className="text-black font-bold text-2xl">Cookly</text>
           </Link>
           <Link href={`/lifetime${referral ? `?referral=${referral}` : ``}`}>
