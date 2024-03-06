@@ -52,8 +52,8 @@ export default function Lifetime() {
       .then((response: any) => {
         console.log(JSON.stringify(response));
         // Assuming the response body has a property 'url' that contains the URL to redirect to
-        if (response && response.body.url) {
-          window.location.href = response.body.url; // Redirects the browser to the URL
+        if (response && response.url) {
+          window.location.href = response.url; // Redirects the browser to the URL
         }
       })
       .catch((error) => {

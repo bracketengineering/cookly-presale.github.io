@@ -6,6 +6,7 @@ const nextConfig = {
     images: {
         domains: ['cookly.co.uk'],
     },
+    distDir: 'docs',
 };
 
 module.exports = nextConfig;
