@@ -10,41 +10,18 @@ import { useEffect, useState } from 'react';
 import { ContentCopy, CopyAll, CopyAllOutlined } from '@mui/icons-material';
 const prefix = "https://cookly.co.uk"
 export default function Home() {
-  const [referral, setReferral] = useState<string | null>(null);
-  const [link, setLink] = useState("https://cookly.co.uk/?referral=EON34S");
 
-  useEffect(() => {
-    // Get the URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const temp = urlParams.get('referral');
-    setReferral(temp);
-
-    // Do something with the metadata value
-    console.log(referral);
-
-
-    // You can store the metadata in state, context, or any other desired location
-  }, [setReferral]);
-
-  function copyClip() {
-
-    // Copy the text inside the text field
-    navigator.clipboard.writeText(link);
-
-    // Alert the copied text
-    alert("Copied the text: ");
-  }
 
 
   return (
     <main className="flex flex-col items-center">
       <div className="flex flex-row justify-center items-center sticky top-0 w-full px-[2%] min-h-[85px]">
         <div className=" max-w-[1200px] flex flex-row justify-between w-full">
-          <Link href={`/${referral ? `?referral=${referral}` : ``}`} className='flex flex-row space-x-2'>
+          <Link href={`/`} className='flex flex-row space-x-2'>
             <img src={`${prefix}/logo`} alt="f" width={32} height={32} className='rounded-3xl'></img>
             <text className="text-black font-bold text-2xl">Cookly</text>
           </Link>
-          <Link href={`/lifetime${referral ? `?referral=${referral}` : ``}`}>
+          <Link href={`/lifetime`}>
             <ShoppingCartIcon />
           </Link>
         </div>
