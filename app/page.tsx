@@ -26,7 +26,7 @@ export default function Home() {
     console.log(referral);
 
     // You can store the metadata in state, context, or any other desired location
-  }, []);
+  }, [setReferral]);
 
 
   return (

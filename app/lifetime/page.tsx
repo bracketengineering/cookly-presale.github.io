@@ -29,7 +29,7 @@ export default function Lifetime() {
     console.log(referral);
 
     // You can store the metadata in state, context, or any other desired location
-  }, []);
+  }, [setReferral]);
 
 
 

@@ -24,7 +24,7 @@ export default function Home() {
 
 
     // You can store the metadata in state, context, or any other desired location
-  }, []);
+  }, [setReferral]);
 
   function copyClip() {
 
