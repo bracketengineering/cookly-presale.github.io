@@ -49,10 +49,10 @@ export default function Lifetime() {
       domain: "https://cookly.co.uk",
       promo_code: referral,
     }) as any;
-    alert(JSON.stringify(response));
+
     console.log(JSON.stringify(response));
-    if (response.data && response.data.url) {
-      window.location.href = response.data.url; // Redirects the browser to the URL
+    if (response.body && response.body.url) {
+      window.location.href = response.body.url; // Redirects the browser to the URL
     }
   };
 
