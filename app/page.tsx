@@ -73,12 +73,14 @@ export default function Home() {
       </div>
 
       <div className="min-h-[60vh] relative flex flex-col z-10 w-full items-center  justify-around  lg:flex px-8 pb-16">
+        <img src={`${prefix}/Dynamic.png`} alt="f" width={400} height={400} className='rounded-3xl' data-aos="fade-up" data-aos-delay="400" />
         <p className="max-w-[800px] space-y-12">
           <span data-aos="fade-up" data-aos-delay="400" className="block">Currently, the health and fitness space remains exclusive for the people who already understand it and know what to eat.‍</span>
           <span className="block" data-aos="fade-up" data-aos-delay="400">We're developing an app that aims to make gaining muscle, maintaining and losing weight accessible and simpler than ever.</span>
           <span className="block" data-aos="fade-up" data-aos-delay="400">You will be able to track your macros with a tracker that constantly updates itself to align with <span className="font-bold">YOUR</span> metabolism. And also provide you with food recommendations based on food you like and already eat.</span>
           <span className="block" data-aos="fade-up" data-aos-delay="400">Achieving your goals has literally never been easier.</span>
-          <span className="block" data-aos="fade-up" data-aos-delay="400">We're offering our first users the opportunity to become a <span className="font-bold">Founding Member</span>. While the application will be free to download and use certain features, premium features will be accessible only through annual/monthly memberships. By contributing to Cookly as a Founding Member, you are supporting our inception and gaining exclusive access to state-of-the-art nutritional features, forever. By becoming a Founding Member, you will be granted a lifetime membership to all current and future premium features.</span></p>
+          <span className="block" data-aos="fade-up" data-aos-delay="400">We're offering our first users the opportunity to become a <span className="font-bold">Founding Member</span>. While the application will be free to download and use certain features, premium features will be accessible only through annual/monthly memberships. By contributing to Cookly as a Founding Member, you are supporting our inception and gaining exclusive access to state-of-the-art nutritional features, forever. By becoming a Founding Member, you will be granted a lifetime membership to all current and future premium features.</span>
+        </p>
       </div>
 
       <p className="relative uppercase text-center font-black  text-6xl my-16 w-full">
