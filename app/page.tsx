@@ -71,10 +71,11 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      <img src={`${prefix}/Weight.png`} alt="f" width={300} height={250} className='rounded-2xl shadow-xl lg:mb-32 mb-16 z-[1000]' data-aos="fade-up" data-aos-delay="400" />
 
-      <div className="min-h-[60vh] relative flex flex-col z-10 w-full items-center  justify-around  lg:flex px-8 pb-16">
-        <img src={`${prefix}/Dynamic.png`} alt="f" width={400} height={400} className='rounded-3xl' data-aos="fade-up" data-aos-delay="400" />
-        <p className="max-w-[800px] space-y-12">
+      <div className="min-h-[60vh] max-w-[1000px] lg:space-x-16 lg:space-y-0 space-y-16 flex-col-reverse space-y-reverse relative flex lg:flex-row z-10 w-full items-center  justify-around  lg:flex px-8 pb-16">
+        <img src={`${prefix}/Logger.png`} alt="f" width={250} height={250} className='rounded-2xl shadow-xl' data-aos="fade-up" data-aos-delay="400" />
+        <p className=" space-y-12">
           <span data-aos="fade-up" data-aos-delay="400" className="block">Currently, the health and fitness space remains exclusive for the people who already understand it and know what to eat.‍</span>
           <span className="block" data-aos="fade-up" data-aos-delay="400">We're developing an app that aims to make gaining muscle, maintaining and losing weight accessible and simpler than ever.</span>
           <span className="block" data-aos="fade-up" data-aos-delay="400">You will be able to track your macros with a tracker that constantly updates itself to align with <span className="font-bold">YOUR</span> metabolism. And also provide you with food recommendations based on food you like and already eat.</span>
@@ -85,25 +86,27 @@ export default function Home() {
 
       <p className="relative uppercase text-center font-black  text-6xl my-16 w-full">
         <span className="text-black" data-aos="fade-in" data-aos-delay="400" data-aos-duration="1000">Features</span>
-
         <div className='z-[-100] bg-gradient-to-r blur-2xl opacity-30 from-green-900 via-[#1edf2b] absolute right-[-150px] lg:right-[2%] translate-y-[-250px] lg:w-[400px] w-[300px] h-[300px]'></div>
       </p>
-      <div className="relative min-h-[91vh] flex flex-col z-10 w-full items-center  justify-around  lg:flex px-8 py-16">
-        <p className="max-w-[800px] space-y-12" data-aos="fade-right" data-aos-delay="400">
-          <span className="block text-3xl font-bold ">Dynamic Macro Tracking</span>
-          <span className="block">Unlike ordinary calorie trackers, which don't at all consider different metabolic rates, our <span className="font-bold">Premium Subscription</span> boasts a dynamic macro goal setter. An advanced algorithm powered by AI that constantly redefines itself for your own metabolism, so that you can be confident you will meet your goals.</span>
-        </p>
-        <p className="max-w-[800px] space-y-12 mt-16" data-aos="fade-left" data-aos-delay="400">
-          <span className="block text-3xl font-bold ">Personalised Food Recommendations</span>
-          <span className="block">Currently, the market for health & fitness apps offer no value aside from confusing data, which is left up to you to interpret. For most who don't have pre-requisite nutrition knowledge, this can leave many people overwhelmed and confused as to how they improve. So we're building a food recommendation engine using AI and Machine Learning to recommend you foods, that not only align with your health and fitness goals, but even your personal dietary preferences.</span>
-        </p>
-        <p className="max-w-[800px] space-y-6 mt-16" data-aos="fade-right" data-aos-delay="400">
-          <span className="block text-3xl font-bold ">Poop Tracker</span>
-          <span className="block">Yep... Exactly what it sounds like.</span>
-          <span className="block">You can even track your bowel movements. In the future, we hope to integrate food recommendations that even tailor to how your body reacts to different foods!</span>
+      <div className=" relative min-h-[91vh] max-w-[1000px] flex lg:space-x-16 flex-col-reverse lg:flex-row z-10 w-full lg:items-start items-center  justify-around px-8 py-16">
 
-        </p>
+        <div>
+          <p className="max-w-[800px] space-y-12" data-aos="fade-right" data-aos-delay="400">
+            <span className="block text-3xl font-bold ">Dynamic Macro Tracking</span>
+            <span className="block">Unlike ordinary calorie trackers, which don't at all consider different metabolic rates, our <span className="font-bold">Premium Subscription</span> boasts a dynamic macro goal setter. An advanced algorithm powered by AI that constantly redefines itself for your own metabolism, so that you can be confident you will meet your goals.</span>
+          </p>
+          <p className="max-w-[800px] space-y-12 mt-16" data-aos="fade-left" data-aos-delay="400">
+            <span className="block text-3xl font-bold ">Personalised Food Recommendations</span>
+            <span className="block">Currently, the market for health & fitness apps offer no value aside from confusing data, which is left up to you to interpret. For most who don't have pre-requisite nutrition knowledge, this can leave many people overwhelmed and confused as to how they improve. So we're building a food recommendation engine using AI and Machine Learning to recommend you foods, that not only align with your health and fitness goals, but even your personal dietary preferences.</span>
+          </p>
+          <p className="max-w-[800px] space-y-6 mt-16" data-aos="fade-right" data-aos-delay="400">
+            <span className="block text-3xl font-bold ">Poop Tracker</span>
+            <span className="block">Yep... Exactly what it sounds like.</span>
+            <span className="block">You can even track your bowel movements. In the future, we hope to integrate food recommendations that even tailor to how your body reacts to different foods!</span>
 
+          </p>
+        </div>
+        <img src={`${prefix}/Dynamic.png`} alt="f" width={250} height={250} className='rounded-2xl shadow-xl mb-16 z-[1000]' data-aos="fade-up" data-aos-delay="400" />
       </div>
 
       <ContactForm />

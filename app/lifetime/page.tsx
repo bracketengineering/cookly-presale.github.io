@@ -75,12 +75,8 @@ export default function Lifetime() {
         </div>
       </div>
       <section className=" py-16 min-h-screen w-full flex flex-col items-center justify-center">
-        <div className="max-w-[1200px] flex lg:flex-row flex-col mx-8 lg:space-x-16 mb-auto ">
-          <img
-            src={`${prefix}/phone.png`}
-            alt="f"
-            className="max-h-[500px] object-contain mb-16 lg:mb-auto flex-shrink-1 "
-          ></img>
+        <div className="max-w-[1200px] flex lg:flex-row flex-col mx-8 lg:space-x-32 mb-auto items-center">
+          <img src={`${prefix}/Dynamic.png`} alt="f" width={250} height={250} className=' items-center rounded-2xl shadow-xl mb-16 z-[1000]' data-aos="fade-up" data-aos-delay="400" />
           <div className="space-y-8">
             <span className="block text-4xl font-black ">Lifetime Premium</span>
             <div className="flex flex-row">
