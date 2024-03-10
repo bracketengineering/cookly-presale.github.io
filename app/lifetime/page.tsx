@@ -58,7 +58,7 @@ export default function Lifetime() {
   };
 
   return (
-    <main className="">
+    <main className="flex flex-col items-center max-w-screen overflow-hidden">
       <div className="flex flex-row justify-center items-center sticky top-0 w-full px-[2%] min-h-[85px]">
         <div className=" max-w-[1200px] flex flex-row justify-between w-full">
           <Link href={`/${referral ? `?referral=${referral}` : ``}`} className='flex flex-row space-x-2'>
