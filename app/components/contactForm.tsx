@@ -50,7 +50,7 @@ export default function ContactForm() {
             <div className='z-[-100] bg-gradient-to-r blur-3xl opacity-15 from-green-900 via-[#1edf2b] absolute lg:left-[-20%] left-[-45%]  w-[400px] h-[600px] top-[-25%]'></div>
             <p className="max-w-[800px] space-y-6 mt-16 mb-8 flex flex-1  flex-col mx-8">
                 <span className="block text-3xl font-black text-center text-transparent outline-text">Beta Testers</span>
-                <span className="block">If you're as excited about this as we are, we'd love to have your advice and come on board as a beta tester. You will be one of your most important members and shape the future of Cookly.</span>
+                <span className="block">If you're as excited about this as we are, we'd love to have your advice and come on board as a beta tester. You will be one of our most important members and shape the future of Cookly.</span>
             </p>
             <form onSubmit={handleSubmit} className='flex flex-col w-full items-center space-y-4  lg:flex px-8 pb-16 max-w-[600px]'>
                 <div className='w-full flex '>
@@ -84,8 +84,9 @@ export default function ContactForm() {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        required
+
                         className='w-full flex py-3 px-4 border-[1px] border-gray-300'
+
                     />
                 </div>
                 <div className='min-h-4 text-red-500'>{errorMessage}</div>
