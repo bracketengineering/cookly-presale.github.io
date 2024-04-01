@@ -46,8 +46,8 @@ export default function ContactForm() {
     };
 
     return (
-        <div className="relative items-center justify-center flex flex-col py-32 ">
-            <form onSubmit={handleSubmit} className='flex flex-col w-full items-center space-y-4  lg:flex px-8 pb-16 max-w-[600px]'>
+        <div className="relative items-center justify-center flex flex-col ">
+            <form onSubmit={handleSubmit} className='flex flex-col w-full items-center space-y-4  lg:flex px-8'>
                 <div className='w-full flex '>
                     <input
                         type="text"
