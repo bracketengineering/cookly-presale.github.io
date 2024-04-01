@@ -60,16 +60,7 @@ export default function Home() {
           Unlock <span className="text-transparent outline-text">your</span> potential
         </p>
         <p className="max-w-[800px] text-center font-mono" data-aos="fade-up" data-aos-delay="600"><span className="font-bold ">April 2024</span> is when you begin a nutrition journey tailored uniquely to you — because your health deserves personalisation, not guesswork.</p>
-        <div className="justify-around justify-center items-center flex flex-col space-y-16">
-          <div data-aos="fade-in" data-aos-delay="1000" data-aos-duration="1500">
-            <CountdownTimer />
-
-            <p className="text-center text-red-500 font-bold mt-4 max-w-[400px]">LIMITED TIME OFFER!</p>
-          </div>
-          <Link href={`/lifetime/${referral ? `?referral=${referral}` : ``}`} >
-            <button data-aos="fade-in" data-aos-delay="1500" data-aos-duration="1500" className="transition ease-in-out hover:-translate-y-1 hover:scale-110 delay-150 bg-[#1edf2b] font-mono hover:bg-black text-black text-lg hover:text-white font-bold px-8 py-4 rounded-full" >Become A Founding Member</button>
-          </Link>
-        </div>
+        <ContactForm />
       </div>
       <img src={`${prefix}/Weight.png`} alt="f" width={300} height={250} className='rounded-2xl shadow-xl lg:mb-32 mb-16 z-[1000]' data-aos="fade-up" data-aos-delay="400" />
 
@@ -109,7 +100,6 @@ export default function Home() {
         <img src={`${prefix}/Dynamic.png`} alt="f" width={250} height={250} className='rounded-2xl shadow-xl mb-16 z-[1000]' data-aos="fade-up" data-aos-delay="400" />
       </div>
 
-      <ContactForm />
       <Footer />
 
     </main>
