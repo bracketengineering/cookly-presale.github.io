@@ -39,6 +39,12 @@ export default function Home() {
     // You can store the metadata in state, context, or any other desired location
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // for smooth scrolling
+    });
+  };
 
   return (
     <main className="flex flex-col items-center max-w-screen overflow-hidden">
@@ -101,9 +107,9 @@ export default function Home() {
 
       <div className=" relative max-w-[1000px] flex lg:space-x-16 lg:space-y-0 space-y-12 flex-col lg:flex-row z-10 w-full  items-center  justify-around px-8 pt-16 pb-32">
         <img src={`${prefix}/Weight.png`} alt="f" width={300} height={250} className='rounded-2xl shadow-xl lg:mb-32 mb-16 z-[1000]' data-aos="fade-up" data-aos-delay="400" />
-        <div className="max-w-[800px] space-y-12">
+        <div className="max-w-[800px] space-y-12 mb-12">
           <span className="block text-3xl font-bold ">Ready to begin?</span>
-          <button type="submit" className="bg-[#1edf2b] hover:bg-black text-black justify-around w-full hover:text-white font-bold px-8 py-4 rounded-full flex flex-row">
+          <button onClick={scrollToTop} className="bg-[#1edf2b] hover:bg-black text-black justify-around w-full hover:text-white font-bold px-8 py-4 rounded-full flex flex-row">
             <div className='flex flex-row'>
               Join Early Access
             </div>
