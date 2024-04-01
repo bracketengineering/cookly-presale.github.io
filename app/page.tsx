@@ -99,7 +99,7 @@ export default function Home() {
         <img src={`${prefix}/Dynamic.png`} alt="f" width={250} height={250} className='rounded-2xl shadow-xl mb-16 z-[1000]' data-aos="fade-up" data-aos-delay="400" />
       </div>
 
-      <div className=" relative max-w-[1000px] flex lg:space-x-16 flex-col-reverse lg:flex-row z-10 w-full lg:items-start items-center  justify-around px-8 pt-16 pb-32">
+      <div className=" relative max-w-[1000px] flex lg:space-x-16 lg:space-y-0 space-y-12 flex-col-reverse lg:flex-row z-10 w-full lg:items-start items-center  justify-around px-8 pt-16 pb-32">
         <img src={`${prefix}/Weight.png`} alt="f" width={300} height={250} className='rounded-2xl shadow-xl lg:mb-32 mb-16 z-[1000]' data-aos="fade-up" data-aos-delay="400" />
         <div className="max-w-[800px] space-y-12">
           <span className="block text-3xl font-bold ">Ready to begin?</span>
