@@ -66,7 +66,7 @@ export default function Home() {
           Unlock <span className="text-transparent outline-text">your</span> potential
         </p>
         <p className="max-w-[800px] text-center font-mono" data-aos="fade-up" data-aos-delay="600"><span className="font-bold ">April 2024</span> is when you begin a nutrition journey tailored uniquely to you — because your health deserves personalisation, not guesswork.</p>
-        <ContactForm />
+        <a href="https://apps.apple.com/gb/app/cookly-ai-nutritionist/id6450118354" className="relative items-center justify-center flex flex-col "><img className="w-[150px] h-[50px]" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="bn45" /></a>
       </div>
 
       <div className="min-h-[60vh] max-w-[1000px] lg:space-x-16 lg:space-y-0 space-y-16 flex-col-reverse space-y-reverse relative flex lg:flex-row z-10 w-full items-center  justify-around  lg:flex px-8 pb-16">
@@ -109,11 +109,9 @@ export default function Home() {
         <img src={`${prefix}/Weight.png`} alt="f" width={300} height={250} className='rounded-2xl shadow-xl lg:mb-32 mb-16 z-[1000]' data-aos="fade-up" data-aos-delay="400" />
         <div className="max-w-[800px] space-y-12 pb-12">
           <span className="block text-3xl font-bold ">Ready to begin?</span>
-          <button onClick={scrollToTop} className="bg-[#1edf2b] hover:bg-black text-black justify-around w-full hover:text-white font-bold px-8 py-4 rounded-full flex flex-row">
-            <div className='flex flex-row'>
-              Join Early Access
-            </div>
-          </button>
+
+          <a href="https://apps.apple.com/gb/app/cookly-ai-nutritionist/id6450118354" className="justify-around px-8 py-4  flex flex-row"><img className="w-[150px] h-[50px]" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="bn45" /></a>
+
         </div>
       </div>
 
